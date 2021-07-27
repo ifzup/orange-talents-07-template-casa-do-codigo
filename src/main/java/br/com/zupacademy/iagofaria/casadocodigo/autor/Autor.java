@@ -1,5 +1,6 @@
 package br.com.zupacademy.iagofaria.casadocodigo.autor;
 
+import br.com.zupacademy.iagofaria.casadocodigo.validator.UniqueValue;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -9,7 +10,7 @@ import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
-public class Autor{
+public class Autor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,14 +21,15 @@ public class Autor{
 
     @Email
     @NotBlank
-    @Column(unique = true)
+    @UniqueValue(domainClass = Autor.class, fieldName = "email")
+    //@Column(unique = true)
     private String email;
 
     @NotBlank
     private String nome;
 
     @NotBlank
-    @Size(max=400)
+    @Size(max = 400)
     private String descricao;
 
     public Autor(Long id, LocalDateTime dataDoRegistro, String email, String nome, String descricao) {
@@ -39,8 +41,8 @@ public class Autor{
     }
 
     @Deprecated
-    public Autor() {}
-
+    public Autor(@Email @NotBlank String email, @NotBlank String nome, @NotBlank @Size(max = 400) String descricao) {
+    }
 
 
 }
