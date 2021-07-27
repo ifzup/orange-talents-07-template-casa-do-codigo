@@ -19,5 +19,4 @@ public class AutorController {
         Autor autor = autorForm.criarAutor();
         autorRepository.save(autor);
     }
-
 }

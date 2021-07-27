@@ -30,5 +30,4 @@ public class UniqueValueValidator implements ConstraintValidator<br.com.zupacade
         Assert.state(list.size() <= 1, "Foi encontrado mais de um " + klass + " com o atributo " + domainAttribute + " = " + value);
         return list.isEmpty();
     }
-
 }
