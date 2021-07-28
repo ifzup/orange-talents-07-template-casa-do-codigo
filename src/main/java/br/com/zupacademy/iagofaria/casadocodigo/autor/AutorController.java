@@ -13,7 +13,7 @@ public class AutorController {
     @Autowired
     private AutorRepository autorRepository;
 
-    @PostMapping("/cadastrar")
+    @PostMapping()
     @Transactional
     public void cadastrar(@RequestBody @Valid AutorRequest autorForm) {
         Autor autor = autorForm.criarAutor();
