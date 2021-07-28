@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(value = "/categoria")
 public class CategoriaController {
@@ -16,6 +18,6 @@ public class CategoriaController {
     @PostMapping
     public void cadastrar(@RequestBody @Valid CategoriaRequest categoriaForm){
         Categoria categoria = categoriaForm.criarCategoria();
-        categoriaRepepository.save(categoria);
+        categoriaRepository.save(categoria);
     }
 }
