@@ -1,6 +1,5 @@
 package br.com.zupacademy.iagofaria.casadocodigo.autor;
 
-import br.com.zupacademy.iagofaria.casadocodigo.validator.UniqueValue;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -40,8 +39,14 @@ public class Autor {
         this.descricao = descricao;
     }
 
+    public Autor(String email, String nome, String descricao) {
+        this.email = email;
+        this.nome = nome;
+        this.descricao = descricao;
+    }
+
     @Deprecated
-    public Autor(@Email @NotBlank String email, @NotBlank String nome, @NotBlank @Size(max = 400) String descricao) {
+    public Autor() {
     }
 
 

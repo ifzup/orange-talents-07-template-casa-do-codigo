@@ -1,7 +1,6 @@
 package br.com.zupacademy.iagofaria.casadocodigo.autor;
 
-import br.com.zupacademy.iagofaria.casadocodigo.validator.UniqueValue;
-
+import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -11,7 +10,8 @@ public class AutorRequest {
 
     @Email
     @NotBlank
-    @UniqueValue(domainClass = Autor.class, fieldName = "email")
+    //@UniqueValue(domainClass = Autor.class, fieldName = "email")
+    @Column(unique = true)
     private String email;
 
     @NotBlank
