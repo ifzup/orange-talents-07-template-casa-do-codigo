@@ -1,10 +1,14 @@
 package br.com.zupacademy.iagofaria.casadocodigo.caregoria;
 
+import br.com.zupacademy.iagofaria.casadocodigo.autor.Autor;
+import br.com.zupacademy.iagofaria.casadocodigo.validator.UniqueValue;
+
 import javax.validation.constraints.NotBlank;
 
 public class CategoriaRequest {
 
     @NotBlank
+    @UniqueValue(domainClass = Categoria.class, fieldName = "nome")
     private String nome;
 
     public CategoriaRequest(@NotBlank String nome) {
