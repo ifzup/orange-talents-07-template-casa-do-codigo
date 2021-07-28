@@ -21,8 +21,8 @@ public class Autor {
 
     @Email
     @NotBlank
-    @UniqueValue(domainClass = Autor.class, fieldName = "email")
-    //@Column(unique = true)
+    //@UniqueValue(domainClass = Autor.class, fieldName = "email")
+    @Column(unique = true)
     private String email;
 
     @NotBlank
