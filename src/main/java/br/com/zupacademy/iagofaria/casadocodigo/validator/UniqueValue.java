@@ -1,4 +1,4 @@
-/*package br.com.zupacademy.iagofaria.casadocodigo.validator;
+package br.com.zupacademy.iagofaria.casadocodigo.validator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -21,4 +21,4 @@ public @interface UniqueValue {
     String fieldName();
     Class<?> domainClass();
 
-}*/
+}

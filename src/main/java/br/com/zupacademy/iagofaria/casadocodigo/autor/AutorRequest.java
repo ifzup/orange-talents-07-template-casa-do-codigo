@@ -1,6 +1,7 @@
 package br.com.zupacademy.iagofaria.casadocodigo.autor;
 
-import javax.persistence.Column;
+import br.com.zupacademy.iagofaria.casadocodigo.validator.UniqueValue;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -10,8 +11,7 @@ public class AutorRequest {
 
     @Email
     @NotBlank
-    //@UniqueValue(domainClass = Autor.class, fieldName = "email")
-    @Column(unique = true)
+    @UniqueValue(domainClass = Autor.class, fieldName = "email")
     private String email;
 
     @NotBlank
@@ -30,7 +30,6 @@ public class AutorRequest {
     }
 
     public Autor criarAutor() {
-        Autor autorCriado = new Autor(email, nome, descricao);
-        return autorCriado;
+        return new Autor(email, nome, descricao);
     }
 }

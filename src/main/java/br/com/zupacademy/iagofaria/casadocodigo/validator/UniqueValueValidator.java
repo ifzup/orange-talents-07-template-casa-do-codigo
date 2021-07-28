@@ -1,4 +1,3 @@
-/*
 package br.com.zupacademy.iagofaria.casadocodigo.validator;
 
 import org.springframework.util.Assert;
@@ -32,4 +31,3 @@ public class UniqueValueValidator implements ConstraintValidator<br.com.zupacade
         return list.isEmpty();
     }
 }
-*/
