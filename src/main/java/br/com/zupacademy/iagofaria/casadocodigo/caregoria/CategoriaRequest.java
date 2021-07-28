@@ -15,7 +15,11 @@ public class CategoriaRequest {
     public CategoriaRequest() {
     }
 
-    public Categoria criarCategoria(){
+    public Categoria criarCategoria() {
         return new Categoria(nome);
+    }
+
+    public String getNome(){
+        return nome;
     }
 }
