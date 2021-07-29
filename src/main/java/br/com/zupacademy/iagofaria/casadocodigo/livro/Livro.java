@@ -1,6 +1,7 @@
 package br.com.zupacademy.iagofaria.casadocodigo.livro;
 
 import br.com.zupacademy.iagofaria.casadocodigo.autor.Autor;
+import br.com.zupacademy.iagofaria.casadocodigo.caregoria.Categoria;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
@@ -31,44 +32,27 @@ public class Livro {
 
     @NotBlank
     @Size(min = 100)
-    private Long numeroPaginas;
+    private int numeroPaginas;
 
     @NotBlank
     @Column(unique = true)
     private String isbn;
 
-    @Future
+    @NotNull
+    //@Future
     @JsonFormat(pattern = "dd-MM-yyyy", shape = JsonFormat.Shape.STRING)
     private LocalDate dataDePublicacao;
 
     @NotNull
+    @ManyToOne
     private String categoria;
 
     @NotNull
-    @ManyToMany
+    @ManyToOne
     private Autor autor;
 
-    @Deprecated
-    public Livro() {
+    public Livro(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario, @NotBlank @Size(min = 20) BigDecimal preco, @NotNull @Min(100) int numeroPaginas, @NotBlank String isbn, @NotNull @Future LocalDate dataDePublicacao, Categoria categoria, Autor autor) {
     }
 
-    public Livro(@NotBlank String titulo,
-                 @NotBlank @Size(max = 500) String resumo,
-                 String sumario,
-                 @NotNull @Min(20) BigDecimal preco,
-                 @NotNull @Min(100) Long numeroPaginas,
-                 @NotBlank String isbn,
-                 @NotNull LocalDate dataDePublicacao,
-                 @NotNull String categoria,
-                 @NotNull Autor autor) {
-        this.titulo = titulo;
-        this.resumo = resumo;
-        this.sumario = sumario;
-        this.preco = preco;
-        this.numeroPaginas = numeroPaginas;
-        this.isbn = isbn;
-        this.dataDePublicacao = dataDePublicacao;
-        this.categoria = categoria;
-        this.autor = autor;
-    }
+
 }
