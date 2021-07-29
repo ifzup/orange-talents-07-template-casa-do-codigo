@@ -26,10 +26,10 @@ public class LivroRequest {
     private String sumario;
 
     @NotBlank
-    @Size(min = 20)
+    @Min(value = 20)
     private BigDecimal preco;
 
-    private @NotNull @Min(100) int numeroPaginas;
+    private @NotNull @Min(value = 100) int numeroPaginas;
 
     @NotBlank
     @UniqueValue(domainClass = Livro.class, fieldName = "isbn")

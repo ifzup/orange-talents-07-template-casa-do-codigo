@@ -43,16 +43,24 @@ public class Livro {
     @JsonFormat(pattern = "dd-MM-yyyy", shape = JsonFormat.Shape.STRING)
     private LocalDate dataDePublicacao;
 
-    @NotNull
     @ManyToOne
-    private String categoria;
+    private @NotNull Categoria categoria;
 
     @NotNull
     @ManyToOne
     private Autor autor;
-
-    public Livro(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario, @NotBlank @Size(min = 20) BigDecimal preco, @NotNull @Min(100) int numeroPaginas, @NotBlank String isbn, @NotNull @Future LocalDate dataDePublicacao, Categoria categoria, Autor autor) {
+    public Livro(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario,
+                 @NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) int numeroPaginas, @NotBlank String isbn,
+                 @NotNull LocalDate dataPublicacao, @NotNull Categoria categoria, @NotNull Autor autor) {
+        this.titulo = titulo;
+        this.resumo = resumo;
+        this.sumario = sumario;
+        this.preco = preco;
+        this.numeroPaginas = numeroPaginas;
+        this.isbn = isbn;
+        this.dataDePublicacao = dataPublicacao;
+        this.categoria = categoria;
+        this.autor = autor;
     }
-
 
 }
