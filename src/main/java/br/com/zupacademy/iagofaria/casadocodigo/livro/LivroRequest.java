@@ -25,11 +25,13 @@ public class LivroRequest {
 
     private String sumario;
 
-    @NotBlank
+    @NotNull
     @Min(value = 20)
     private BigDecimal preco;
 
-    private @NotNull @Min(value = 100) int numeroPaginas;
+    @NotNull
+    @Min(value = 100)
+    private int numeroPaginas;
 
     @NotBlank
     @UniqueValue(domainClass = Livro.class, fieldName = "isbn")
@@ -48,6 +50,19 @@ public class LivroRequest {
     @FindObjectId(domainClass = Autor.class, fieldName = "id")
     private Long autorId;
 
+    public LivroRequest(String titulo, String resumo, String sumario, BigDecimal preco, int numeroPaginas, String isbn, Long categoriaId, Long autorId) {
+        this.titulo = titulo;
+        this.resumo = resumo;
+        this.sumario = sumario;
+        this.preco = preco;
+        this.numeroPaginas = numeroPaginas;
+        this.isbn = isbn;
+        //this.dataDePublicacao = dataDePublicacao;
+        this.categoriaId = categoriaId;
+        this.autorId = autorId;
+    }
+
+    /*
     public LivroRequest(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario,
                      @NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) int numeroPaginas, @NotBlank String isbn,
                      @NotNull Long categoriaId, @NotNull Long autorId) {
@@ -59,7 +74,7 @@ public class LivroRequest {
         this.isbn = isbn;
         this.categoriaId = categoriaId;
         this.autorId = autorId;
-    }
+    }*/
 
     public Livro converter(EntityManager manager) {
         Autor autor = manager.find(Autor.class, autorId);

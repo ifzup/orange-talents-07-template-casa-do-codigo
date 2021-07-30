@@ -26,12 +26,12 @@ public class Livro {
 
     private String sumario;
 
-    @NotBlank
-    @Size(min = 20)
+    @NotNull
+    @Min(value = 20)
     private BigDecimal preco;
 
-    @NotBlank
-    @Size(min = 100)
+    @NotNull
+    @Min(value = 100)
     private int numeroPaginas;
 
     @NotBlank
@@ -43,14 +43,28 @@ public class Livro {
     @JsonFormat(pattern = "dd-MM-yyyy", shape = JsonFormat.Shape.STRING)
     private LocalDate dataDePublicacao;
 
+    @NotNull
     @ManyToOne
     private @NotNull Categoria categoria;
 
     @NotNull
     @ManyToOne
     private Autor autor;
-    public Livro(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario,
-                 @NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) int numeroPaginas, @NotBlank String isbn,
+
+    public Livro(String titulo, String resumo, String sumario, BigDecimal preco, int numeroPaginas, String isbn, LocalDate dataDePublicacao, Categoria categoria, Autor autor) {
+        this.titulo = titulo;
+        this.resumo = resumo;
+        this.sumario = sumario;
+        this.preco = preco;
+        this.numeroPaginas = numeroPaginas;
+        this.isbn = isbn;
+        this.dataDePublicacao = dataDePublicacao;
+        this.categoria = categoria;
+        this.autor = autor;
+    }
+
+    /*public Livro(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario,
+                 @Min(20) BigDecimal preco, @NotNull @Min(100) int numeroPaginas, @NotBlank String isbn,
                  @NotNull LocalDate dataPublicacao, @NotNull Categoria categoria, @NotNull Autor autor) {
         this.titulo = titulo;
         this.resumo = resumo;
@@ -61,6 +75,6 @@ public class Livro {
         this.dataDePublicacao = dataPublicacao;
         this.categoria = categoria;
         this.autor = autor;
-    }
+    }*/
 
 }
