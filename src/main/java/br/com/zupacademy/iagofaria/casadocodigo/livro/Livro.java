@@ -44,12 +44,21 @@ public class Livro {
     private LocalDate dataDePublicacao;
 
     @NotNull
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private @NotNull Categoria categoria;
 
     @NotNull
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Autor autor;
+
+    @Deprecated
+    public Livro() {
+    }
+
+    public Livro(Long id, String titulo) {
+        this.id = id;
+        this.titulo = titulo;
+    }
 
     public Livro(String titulo, String resumo, String sumario, BigDecimal preco, int numeroPaginas, String isbn, LocalDate dataDePublicacao, Categoria categoria, Autor autor) {
         this.titulo = titulo;
@@ -61,6 +70,46 @@ public class Livro {
         this.dataDePublicacao = dataDePublicacao;
         this.categoria = categoria;
         this.autor = autor;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getResumo() {
+        return resumo;
+    }
+
+    public String getSumario() {
+        return sumario;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public int getNumeroPaginas() {
+        return numeroPaginas;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public LocalDate getDataDePublicacao() {
+        return dataDePublicacao;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public Autor getAutor() {
+        return autor;
     }
 
     /*public Livro(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario,
