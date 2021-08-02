@@ -18,14 +18,13 @@ public class LivroDetalhesResponse {
     private Autor autor;
 
 
-
     public LivroDetalhesResponse(Livro livro) {
         this.id = livro.getId();
         this.titulo = livro.getTitulo();
         this.preco = livro.getPreco();
         this.resumo = livro.getResumo();
         this.sumario = livro.getSumario();
-        this.numeroPaginas= livro.getNumeroPaginas();
+        this.numeroPaginas = livro.getNumeroPaginas();
         this.isbn = livro.getIsbn();
         this.dataPublicacao = livro.getDataDePublicacao();
         this.autor = livro.getAutor();
