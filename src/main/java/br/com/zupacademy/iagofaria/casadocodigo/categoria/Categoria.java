@@ -1,4 +1,4 @@
-package br.com.zupacademy.iagofaria.casadocodigo.caregoria;
+package br.com.zupacademy.iagofaria.casadocodigo.categoria;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -15,7 +15,7 @@ public class Categoria {
     private String nome;
 
     public Categoria(@NotBlank String nome) {
-        if (nome.equals("") || nome.trim().equals("") || nome == null) {
+        if (nome.equals("") || nome.trim().equals("")) {
             throw new IllegalArgumentException("Nome é obrigatório");
         }
         this.nome = nome;

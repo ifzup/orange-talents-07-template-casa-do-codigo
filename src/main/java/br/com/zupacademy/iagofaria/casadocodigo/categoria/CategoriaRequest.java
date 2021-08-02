@@ -1,6 +1,5 @@
-package br.com.zupacademy.iagofaria.casadocodigo.caregoria;
+package br.com.zupacademy.iagofaria.casadocodigo.categoria;
 
-import br.com.zupacademy.iagofaria.casadocodigo.autor.Autor;
 import br.com.zupacademy.iagofaria.casadocodigo.validator.UniqueValue;
 
 import javax.validation.constraints.NotBlank;

@@ -1,4 +1,4 @@
-package br.com.zupacademy.iagofaria.casadocodigo.caregoria;
+package br.com.zupacademy.iagofaria.casadocodigo.categoria;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

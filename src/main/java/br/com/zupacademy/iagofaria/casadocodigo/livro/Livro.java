@@ -1,7 +1,7 @@
 package br.com.zupacademy.iagofaria.casadocodigo.livro;
 
 import br.com.zupacademy.iagofaria.casadocodigo.autor.Autor;
-import br.com.zupacademy.iagofaria.casadocodigo.caregoria.Categoria;
+import br.com.zupacademy.iagofaria.casadocodigo.categoria.Categoria;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;

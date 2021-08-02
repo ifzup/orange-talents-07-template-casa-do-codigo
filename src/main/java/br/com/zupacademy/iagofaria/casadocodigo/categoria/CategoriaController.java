@@ -1,4 +1,4 @@
-package br.com.zupacademy.iagofaria.casadocodigo.caregoria;
+package br.com.zupacademy.iagofaria.casadocodigo.categoria;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

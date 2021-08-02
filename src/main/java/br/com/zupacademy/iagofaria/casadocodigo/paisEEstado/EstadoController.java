@@ -1,6 +1,7 @@
 package br.com.zupacademy.iagofaria.casadocodigo.paisEEstado;
 
 
+import br.com.zupacademy.iagofaria.casadocodigo.validator.ProibeEstadoRepetidoNoPais;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.WebDataBinder;

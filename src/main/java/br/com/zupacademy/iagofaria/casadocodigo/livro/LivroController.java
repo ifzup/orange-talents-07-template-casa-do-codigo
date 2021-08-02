@@ -1,7 +1,5 @@
 package br.com.zupacademy.iagofaria.casadocodigo.livro;
 
-import br.com.zupacademy.iagofaria.casadocodigo.autor.AutorRepository;
-import br.com.zupacademy.iagofaria.casadocodigo.caregoria.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,5 +1,8 @@
-package br.com.zupacademy.iagofaria.casadocodigo.paisEEstado;
+package br.com.zupacademy.iagofaria.casadocodigo.validator;
 
+import br.com.zupacademy.iagofaria.casadocodigo.paisEEstado.Estado;
+import br.com.zupacademy.iagofaria.casadocodigo.paisEEstado.EstadoRepository;
+import br.com.zupacademy.iagofaria.casadocodigo.paisEEstado.EstadoRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
