@@ -1,6 +1,7 @@
 package br.com.zupacademy.iagofaria.casadocodigo.paisEEstado;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -18,7 +19,7 @@ public class Estado {
     @NotNull
     private Pais pais;
 
-    public Estado(@NotBlank String nomeEstado, Pais paisDoEstado){
+    public Estado(@NotBlank String nomeEstado, @NotNull @Valid Pais paisDoEstado){
         this.nome = nomeEstado;
         this.pais = paisDoEstado;
     }

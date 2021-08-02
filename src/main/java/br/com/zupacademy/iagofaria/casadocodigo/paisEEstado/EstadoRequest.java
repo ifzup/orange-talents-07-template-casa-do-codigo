@@ -1,5 +1,6 @@
 package br.com.zupacademy.iagofaria.casadocodigo.paisEEstado;
 
+import br.com.zupacademy.iagofaria.casadocodigo.validator.UniqueValue;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotNull;
 public class EstadoRequest {
 
     @NotBlank
+    @UniqueValue(domainClass = Estado.class, fieldName = "nome")
     private String nome;
 
     @NotNull
