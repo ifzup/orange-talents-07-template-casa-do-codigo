@@ -7,7 +7,7 @@ import br.com.zupacademy.iagofaria.casadocodigo.validator.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.util.Assert;
 
-import javax.persistence.*;
+import javax.persistence.EntityManager;
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -62,26 +62,12 @@ public class LivroRequest {
         this.autorId = autorId;
     }
 
-    /*
-    public LivroRequest(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario,
-                     @NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) int numeroPaginas, @NotBlank String isbn,
-                     @NotNull Long categoriaId, @NotNull Long autorId) {
-        this.titulo = titulo;
-        this.resumo = resumo;
-        this.sumario = sumario;
-        this.preco = preco;
-        this.numeroPaginas = numeroPaginas;
-        this.isbn = isbn;
-        this.categoriaId = categoriaId;
-        this.autorId = autorId;
-    }*/
-
     public Livro converter(EntityManager manager) {
         Autor autor = manager.find(Autor.class, autorId);
         Categoria categoria = manager.find(Categoria.class, categoriaId);
-        Assert.notNull(autor,"Autor não encontrado");
-        Assert.notNull(categoria,"Categoria não encontrada");
-        return new Livro(titulo,resumo,sumario,preco,numeroPaginas,isbn,dataDePublicacao,categoria,autor);
+        Assert.notNull(autor, "Autor não encontrado");
+        Assert.notNull(categoria, "Categoria não encontrada");
+        return new Livro(titulo, resumo, sumario, preco, numeroPaginas, isbn, dataDePublicacao, categoria, autor);
     }
 
     public void setDataPublicacao(LocalDate dataPublicacao) {

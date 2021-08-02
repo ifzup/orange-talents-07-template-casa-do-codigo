@@ -18,7 +18,7 @@ public class PaisController {
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid PaisRequest paisForm){
+    public void cadastrar(@RequestBody @Valid PaisRequest paisForm) {
         Pais pais = new Pais(paisForm);
         paisRepository.save(pais);
     }

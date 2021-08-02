@@ -22,7 +22,7 @@ public class CategoriaRequest {
         return new Categoria(nome);
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 }

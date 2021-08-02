@@ -16,9 +16,13 @@ import static java.lang.annotation.ElementType.FIELD;
 public @interface FindObjectId {
 
     String message() default "{Validação pega pelo meu validator}";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
+
     String fieldName();
+
     Class<?> domainClass();
 }
 

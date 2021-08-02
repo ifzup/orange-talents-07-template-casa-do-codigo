@@ -16,9 +16,13 @@ import static java.lang.annotation.ElementType.FIELD;
 public @interface UniqueValue {
 
     String message() default "{Validação}";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
+
     String fieldName();
+
     Class<?> domainClass();
 
 }

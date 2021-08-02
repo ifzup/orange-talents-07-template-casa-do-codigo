@@ -19,12 +19,13 @@ public class Estado {
     @NotNull
     private Pais pais;
 
-    public Estado(@NotBlank String nomeEstado, @NotNull @Valid Pais paisDoEstado){
+    public Estado(@NotBlank String nomeEstado, @NotNull @Valid Pais paisDoEstado) {
         this.nome = nomeEstado;
         this.pais = paisDoEstado;
     }
 
     @Deprecated
-    public Estado(){}
+    public Estado() {
+    }
 
 }

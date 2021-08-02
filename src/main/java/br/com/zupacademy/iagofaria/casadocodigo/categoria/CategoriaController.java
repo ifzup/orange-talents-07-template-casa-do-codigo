@@ -16,7 +16,7 @@ public class CategoriaController {
     private CategoriaRepository categoriaRepository;
 
     @PostMapping
-    public void cadastrar(@RequestBody @Valid CategoriaRequest categoriaForm){
+    public void cadastrar(@RequestBody @Valid CategoriaRequest categoriaForm) {
         Categoria categoria = categoriaForm.criarCategoria();
         categoriaRepository.save(categoria);
     }

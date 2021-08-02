@@ -18,7 +18,7 @@ public class PaisRequest {
     public PaisRequest() {
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 }

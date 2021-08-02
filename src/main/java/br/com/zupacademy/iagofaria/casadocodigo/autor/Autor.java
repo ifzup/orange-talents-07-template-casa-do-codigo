@@ -20,7 +20,6 @@ public class Autor {
 
     @Email
     @NotBlank
-    //@UniqueValue(domainClass = Autor.class, fieldName = "email")
     @Column(unique = true)
     private String email;
 
@@ -53,18 +52,6 @@ public class Autor {
     @Deprecated
     public Autor() {
     }
-/*
-    public Long getId() {
-        return id;
-    }
-
-    public LocalDateTime getDataDoRegistro() {
-        return dataDoRegistro;
-    }
-
-    public String getEmail() {
-        return email;
-    }*/
 
     public String getNome() {
         return nome;

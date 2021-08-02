@@ -25,13 +25,13 @@ public class EstadoController {
     private ProibeEstadoRepetidoNoPais proibeEstadoRepetidoNoPais;
 
     @InitBinder
-    public void init(WebDataBinder binder){
+    public void init(WebDataBinder binder) {
         binder.addValidators(proibeEstadoRepetidoNoPais);
     }
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid EstadoRequest estadoForm){
+    public void cadastrar(@RequestBody @Valid EstadoRequest estadoForm) {
         Estado estado = estadoForm.converte(manager);
         estadoRepository.save(estado);
     }

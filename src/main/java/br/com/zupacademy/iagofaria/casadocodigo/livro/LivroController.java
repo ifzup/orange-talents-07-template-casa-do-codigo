@@ -30,11 +30,10 @@ public class LivroController {
     }
 
     @GetMapping
-    public List<LivroResponse> listar(){
+    public List<LivroResponse> listar() {
         List<Livro> listaDeLivros = livroRepository.findAll();
 
-        //return listaDeLivros;
-       return LivroResponse.converte(listaDeLivros);
+        return LivroResponse.converte(listaDeLivros);
     }
 
     @GetMapping("/{id}")

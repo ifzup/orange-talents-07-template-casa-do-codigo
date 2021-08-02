@@ -15,7 +15,7 @@ public class Pais {
     @NotBlank
     private String nome;
 
-    public Pais(@Valid PaisRequest paisForm){
+    public Pais(@Valid PaisRequest paisForm) {
         this.nome = paisForm.getNome();
     }
 

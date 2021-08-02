@@ -9,7 +9,8 @@ public class LivroResponse {
     private Long id;
 
     @Deprecated
-    public LivroResponse(){}
+    public LivroResponse() {
+    }
 
     public LivroResponse(Livro livro) {
         this.titulo = livro.getTitulo();

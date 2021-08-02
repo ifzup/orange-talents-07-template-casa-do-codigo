@@ -24,7 +24,7 @@ public @interface CpfOuCnpj {
 
     String message() default "O campo deve ser um CNPJ ou CPF valido";
 
-    Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 }

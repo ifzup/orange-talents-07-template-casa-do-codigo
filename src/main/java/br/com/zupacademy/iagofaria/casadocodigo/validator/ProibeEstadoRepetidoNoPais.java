@@ -36,7 +36,7 @@ public class ProibeEstadoRepetidoNoPais implements Validator {
 
         if (possivelEstado.isPresent()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-           // errors.rejectValue("paisId", null, "Pais Id:" + form.getPaisId() + " já possui o estado " + form.getNome() + " cadastrado!");
+            // errors.rejectValue("paisId", null, "Pais Id:" + form.getPaisId() + " já possui o estado " + form.getNome() + " cadastrado!");
         }
     }
 

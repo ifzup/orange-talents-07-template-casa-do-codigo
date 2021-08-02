@@ -17,17 +17,17 @@ public class EstadoRequest {
     @NotNull
     private Long paisId;
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 
-    public Long getPaisId(){
+    public Long getPaisId() {
         return paisId;
     }
 
-    public Estado converte(EntityManager manager){
+    public Estado converte(EntityManager manager) {
         Pais pais = manager.find(Pais.class, paisId);
-        if(pais == null){
+        if (pais == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
         return new Estado(nome, pais);
