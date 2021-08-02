@@ -45,9 +45,32 @@ public class Autor {
         this.descricao = descricao;
     }
 
+    public Autor(String nome, String descricao) {
+        this.nome = nome;
+        this.descricao = descricao;
+    }
+
     @Deprecated
     public Autor() {
     }
+/*
+    public Long getId() {
+        return id;
+    }
 
+    public LocalDateTime getDataDoRegistro() {
+        return dataDoRegistro;
+    }
 
+    public String getEmail() {
+        return email;
+    }*/
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
 }

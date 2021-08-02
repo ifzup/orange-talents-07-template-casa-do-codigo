@@ -60,6 +60,11 @@ public class Livro {
         this.titulo = titulo;
     }
 
+    public Livro(Autor autor) {
+        this.autor = autor;
+
+    }
+
     public Livro(String titulo, String resumo, String sumario, BigDecimal preco, int numeroPaginas, String isbn, LocalDate dataDePublicacao, Categoria categoria, Autor autor) {
         this.titulo = titulo;
         this.resumo = resumo;
